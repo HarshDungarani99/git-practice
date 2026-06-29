@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sudo apt-get update
+sudo apt-get install nginx -y
+
+sudo systemctl start nginx
+sudo systemctl enable nginx
+sudo systemctl status nginx
+
+cp index.html /var/www/html
+
+sudo systemctl restart nginx
+
+echo "Website is now deployed... and running on port 80..."
